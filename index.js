@@ -85,7 +85,10 @@ client.on('messageCreate', message => {
 	 //.setTimestamp()
 	 //.setColor('RANDOM')
 
- client.channels.cache.find(c => c.name == "bot-logs");
+ const channel = client.channels.cache.find(c => c.name == "bot-logs");
+ if(!channel) {
+	return message.channel.send("There is no channel called suggestions")
+  }
 
  if (!channel) return;
 
@@ -110,7 +113,10 @@ client.on('guildMemberAdd', member => {
 	welcomeEmbed.setTitle(member.user.username + ' is now member of this beautiful server! \nWe\'ve got now ' + member.guild.memberCount + ' members!')
 	welcomeEmbed.setImage('https://cdn.discordapp.com/attachments/834116936366817302/948870203138277376/Logo_Volter.png')
   //This const is so you don't get the error!
- member.guild.channels.cache.find((i) => (i.name === 'welcome').send({embeds: [welcomeEmbed]}))
+	const channel = member.guild.channels.cache.find((i) => (i.name === 'welcome').send({embeds: [welcomeEmbed]}))
+	if(!channel) {
+		return message.channel.send("There is no channel called suggestions")
+	  }
   
   });
   
@@ -123,8 +129,10 @@ client.on('guildMemberAdd', member => {
 	goodbyeEmbed.setTitle( member.user.username + ' Said goodbye to this server. \nNow we got\ ' + member.guild.memberCount + ' members.');
 	goodbyeEmbed.setImage('https://cdn.discordapp.com/attachments/834116936366817302/948870203138277376/Logo_Volter.png')
   //This const is so you don't get the error!
-member.guild.channels.cache.find((i) => (i.name === 'greetings').send({embeds: [goodbyeEmbed]}))
-
+	const channel = member.guild.channels.cache.find((i) => (i.name === 'greetings').send({embeds: [goodbyeEmbed]}))
+	if(!channel) {
+		return message.channel.send("There is no channel called suggestions")
+	  }
 
 
   });
