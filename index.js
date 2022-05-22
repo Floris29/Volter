@@ -66,19 +66,22 @@ client.on('messageCreate', message => {
 	 let logschannel = message.guild.channels.cache.find(channel => channel.name === 'bot-logs').send(logMessage) 
 	 console.log (`logged messages in ${message.guild.name}.`)
 
-	 client.on('messageDelete', async (messageDeleted, error) => {
-	 var berichtenEmbed = new discord.MessageEmbed()
-	 .setAuthor(`${messageDeleted.author.tag}`, `${messageDeleted.author.avatarURL({ size: 4096 })}`)
-	 .addFields(
-		 { name: 'Message made by', value: `<@${messageDeleted.author.id}>` },
-		 { name: 'Message', value: `${content}` },
-		 { name: "Message id", value: `${messageDeleted.id}` },
-		 { name: "Deleted messages in", value: `${messageDeleted.channel}` }
-	 )
-	 .setTimestamp()
-	 .setColor('RANDOM')
+	 //client.on('messageDelete', async (messageDeleted, error) => {
+	 //var berichtenEmbed = new discord.MessageEmbed()
+	 //.setAuthor(`${messageDeleted.author.tag}`, `${messageDeleted.author.avatarURL({ size: 4096 })}`)
+	 //.addFields(
+		// { name: 'Message made by', value: `<@${messageDeleted.author.id}>` },
+		 //{ name: 'Message', value: `${content}` },
+		 //{ name: "Message id", value: `${messageDeleted.id}` },
+		 //{ name: "Deleted messages in", value: `${messageDeleted.channel}` }
+	 //)
+	 //.setTimestamp()
+	 //.setColor('RANDOM')
 
  const channel = client.channels.cache.find(c => c.name == "bot-logs");
+ if(!channel) {
+	return message.channel.send("There is no channel called suggestions")
+  }
 
  if (!channel) return;
 
@@ -94,7 +97,6 @@ client.on('messageCreate', message => {
 		console.error(error);
 		message.channel.send('There was an error trying to execute that command!');
 	}
-});
 
 client.on('guildMemberAdd', member => {
   
@@ -104,7 +106,10 @@ client.on('guildMemberAdd', member => {
 	welcomeEmbed.setTitle(member.user.username + ' is now member of this beautiful server! \nWe\'ve got now ' + member.guild.memberCount + ' members!')
 	welcomeEmbed.setImage('https://cdn.discordapp.com/attachments/834116936366817302/948870203138277376/Logo_Volter.png')
   
-	member.guild.channels.cache.find(i => i.name === 'welcome').send({embeds: [welcomeEmbed]})
+	const channel = member.guild.channels.cache.find((i) => (i.name === 'welcome').send({embeds: [welcomeEmbed]}))
+	if(!channel) {
+		return message.channel.send("There is no channel called suggestions")
+	  }
   
   });
   
@@ -117,7 +122,10 @@ client.on('guildMemberAdd', member => {
 	goodbyeEmbed.setTitle( member.user.username + ' Said goodbye to this server. \nNow we got\ ' + member.guild.memberCount + ' members.');
 	goodbyeEmbed.setImage('https://cdn.discordapp.com/attachments/834116936366817302/948870203138277376/Logo_Volter.png')
   
-	member.guild.channels.cache.find(i => i.name === 'greetings').send({embeds: [goodbyeEmbed]})
+	const channel = member.guild.channels.cache.find((i) => (i.name === 'greetings').send({embeds: [goodbyeEmbed]}))
+	if(!channel) {
+		return message.channel.send("There is no channel called suggestions")
+	  }
 
 
   });
