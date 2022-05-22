@@ -43,6 +43,13 @@ for (const file of AdminFiles) {
 	client.commands.set(command.name, command);
 }
 
+const Ticketfiles = fs.readdirSync('./Tickets').filter(file => file.endsWith('.js'));
+
+for (const file of Ticketfiles) {
+	const command = require(`./Tickets/${file}`);
+	client.commands.set(command.name, command);
+}
+
 client.on('messageCreate', message => {
 
   	//Check of het bericht een prefix heeft en dat het het bericht niet van een bot af komt. Is dit zo, skip dan de rest van de code
@@ -105,7 +112,7 @@ client.on('guildMemberAdd', member => {
 	welcomeEmbed.setColor('#5cf000')
 	welcomeEmbed.setTitle(member.user.username + ' is now member of this beautiful server! \nWe\'ve got now ' + member.guild.memberCount + ' members!')
 	welcomeEmbed.setImage('https://cdn.discordapp.com/attachments/834116936366817302/948870203138277376/Logo_Volter.png')
-  
+  //This const is so you don't get the error!
 	const channel = member.guild.channels.cache.find((i) => (i.name === 'welcome').send({embeds: [welcomeEmbed]}))
 	if(!channel) {
 		return message.channel.send("There is no channel called suggestions")
@@ -121,7 +128,7 @@ client.on('guildMemberAdd', member => {
 	goodbyeEmbed.setColor('#f00000')
 	goodbyeEmbed.setTitle( member.user.username + ' Said goodbye to this server. \nNow we got\ ' + member.guild.memberCount + ' members.');
 	goodbyeEmbed.setImage('https://cdn.discordapp.com/attachments/834116936366817302/948870203138277376/Logo_Volter.png')
-  
+  //This const is so you don't get the error!
 	const channel = member.guild.channels.cache.find((i) => (i.name === 'greetings').send({embeds: [goodbyeEmbed]}))
 	if(!channel) {
 		return message.channel.send("There is no channel called suggestions")
