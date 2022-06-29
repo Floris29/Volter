@@ -22,85 +22,61 @@ module.exports = {
         type: "STRING",
         required: true
     },
-    {
-        name: "Messages",
-        description: "set a number of days for their messages to delete.",
-        type: " STRING",
-        required: true,
-        choices: [{
-                name: "No messages have to get deleted",
-                value: "0"
-            },
-            {
-                name: "Delete all messages up to seven days",
-                value: "7"
-            }
-        ]
-    }
 ],
-
-async execute(message, args) {
+async execute(message, args, client) {
     const target = message.mentions.members.first();
     const reason = args.slice(1, args.length - 1).join(" ");
-    const Amount = args[args.length - 1];
-	const permsReason = "Invalid Permissions"
-	const neededPermission = Permissions.FLAGS.BAN_MEMBERS;
 
-    console.log("Target: " + reason);
+		console.log("Target: " + reason);
 
 		const embed = new MessageEmbed()
-			.setTitle("There is a error executing this command.")
+			.setTitle("There seems to be a error to execute this command")
 			.setColor("RED")
-			.addFields({
-				name: "Command:",
-				value: this.name
-			}, {
-				name: "Reason:",
-				value: permsReason
-			}, {
-				name: "Needed Permission:",
-				value: "Ban_Members"
-			})
+			.setDescription("Are you sure you got the right permission? And are you providing a reason?")
 
-		if (!message.member.permissions.has(neededPermission))
+			if(!message.member.permissions.has(Permissions.FLAGS.BAN_MEMBERS))
 			return message.reply({embeds: [embed]}).catch((err) => {console.log(err)});
 
 		if (target.id === message.member.id)
 			return message.reply({
 				embeds: [new MessageEmbed()
-                .setTitle("There is a error executing this command.")
-                .setColor("RED")
-				.setDescription("Why do you want to ban yourself? Are u crazy? ")
-                .setTimestamp()
+				.setTitle("There seems to be a error to execute this command")
+				.setColor("RED")
+				.setDescription("Why would you ban yourself?")
 				],
 				ephemeral: true
 			});
 
-		if (target.permissions.has(neededPermission)) {
+		if (target.permissions.has(Permissions.FLAGS.BAN_MEMBERS)) {
 			return message.reply({
 				embeds: [new MessageEmbed()
-                .setColor("RED")
-                .setDescription("You can't ban someone with higher permissions.")]
+				.setColor("RED")
+				.setDescription("You can't kick this person.")]
 			});
 		}
 
+		message.guild.bans.create(target, {
+			reason: reason
+		})
+
 		const DMEmbed = new MessageEmbed()
-			.setTitle(`You are banned from ${message.guild.name}`)
+			.setTitle(`You've Been banned From ${message.guild.name}`)
 			.setColor('RED')
 			.setTimestamp()
 			.addFields({
-				name: "Reason:",
-				value: reason
-			}, {
-				name: "Banned by:",
+                name: "Reason:",
+                value: reason.replace(/\s/g, '') == "" ? "Not Provided" : reason,
+            },{
+				name: "Banned By:",
 				value: message.member.user.toString()
 			} );
 
-		await target.send({
+		target.send({
 			embeds: [DMEmbed]
 		}).catch((err) => {
 			console.log(err)
 		});
 
-}
+
+	}
 }

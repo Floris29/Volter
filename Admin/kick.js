@@ -1,6 +1,5 @@
 const { Client, Intents } = require('discord.js');
-const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
-const Discord = require('discord.js');
+const discord = require('discord.js');
 const { MessageEmbed, Collection, Permissions } = require ('discord.js');
 
 
@@ -8,7 +7,6 @@ module.exports = {
 	name: 'kick',
 	description: 'Kicks a specific member',
     admin: true,
-	usage: "[Target] [Reason] [Messages]",
 	options: [{
 			name: "Target",
 			description: "Provide A User To Kick.",
@@ -23,29 +21,18 @@ module.exports = {
 		}
 	],
 
-	async execute(message, args) {
+	async execute(message, args, client) {
 		const target = message.mentions.members.first();
 		const reason = args.slice(1, args.length - 1).join(" ");
-		const permsReason = "Invalid Permissions"
-		const neededPermission = Permissions.FLAGS.KICK_MEMBERS;
 
 		console.log("Target: ");
 
 		const embed = new MessageEmbed()
 			.setTitle("There seems to be a error to execute this command")
 			.setColor("RED")
-			.addFields({
-				name: "Command:",
-				value: this.name
-			}, {
-				name: "Reason:",
-				value: permsReason
-			}, {
-				name: "Needed Permissions:",
-				value: "Kick_Members"
-			})
+			.setDescription("Are you sure you got the right permission? And are you providing a reason?")
 
-		if (!message.member.permissions.has(neededPermission))
+			if(!message.member.permissions.has(Permissions.FLAGS.KICK_MEMBERS))
 			return message.reply({embeds: [embed]}).catch((err) => {console.log(err)});
 
 		if (target.id === message.member.id)
@@ -58,27 +45,29 @@ module.exports = {
 				ephemeral: true
 			});
 
-		if (target.permissions.has(neededPermission)) {
+			if (target.permissions.has(Permissions.FLAGS.KICK_MEMBERS)) {
 			return message.reply({
 				embeds: [new MessageEmbed()
 				.setColor("RED")
-				.setDescription("❌ You Can't Kick An Admin ❌")]
+				.setDescription("You can't kick this person.")]
 			});
 		}
+
+		target.kick()
 
 		const DMEmbed = new MessageEmbed()
 			.setTitle(`You've Been Kicked From ${message.guild.name}`)
 			.setColor('RED')
 			.setTimestamp()
 			.addFields({
-				name: "Reason:",
-				value: reason
-			}, {
+                name: "Reason:",
+                value: reason.replace(/\s/g, '') == "" ? "Not Provided" : reason,
+            },{
 				name: "Kicked By:",
 				value: message.member.user.toString()
 			} );
 
-		await target.send({
+		target.send({
 			embeds: [DMEmbed]
 		}).catch((err) => {
 			console.log(err)

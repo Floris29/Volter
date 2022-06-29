@@ -12,7 +12,7 @@ module.exports = {
   //Laat zien hoe het command gebruikt moet worden
 	usage: '[command name]',
 	admin: true,
-	execute(message, args) {
+	execute(message, args, client) {
 		var commandEmbedDesc = '';
 		const { commands } = message.client;
 
