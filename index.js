@@ -81,27 +81,27 @@ client.on('messageCreate', message => {
 	}
 });
 
-client.on('guildMemberAdd', member => {
+// client.on('guildMemberAdd', member => {
   
-	const welcomeEmbed = new MessageEmbed()
+// 	const welcomeEmbed = new MessageEmbed()
   
-	welcomeEmbed.setColor('#5cf000')
-	welcomeEmbed.setTitle(member.user.username + ' is now member of this beautiful server! \nWe\'ve got now ' + member.guild.memberCount + ' members!')
-	welcomeEmbed.setImage('https://cdn.discordapp.com/attachments/834116936366817302/948870203138277376/Logo_Volter.png')
+// 	welcomeEmbed.setColor('#5cf000')
+// 	welcomeEmbed.setTitle(member.user.username + ' is now member of this beautiful server! \nWe\'ve got now ' + member.guild.memberCount + ' members!')
+// 	welcomeEmbed.setImage('https://cdn.discordapp.com/attachments/834116936366817302/948870203138277376/Logo_Volter.png')
   
-	member.guild.channels.cache.find(i => i.name === 'welcome').send({embeds: [welcomeEmbed]})
+// 	member.guild.channels.cache.find(i => i.name === 'welcome').send({embeds: [welcomeEmbed]})
   
-  });
+//   });
   
-  client.on('guildMemberRemove', member => {
+//   client.on('guildMemberRemove', member => {
   
   
-	const goodbyeEmbed = new MessageEmbed()
+// 	const goodbyeEmbed = new MessageEmbed()
   
-	goodbyeEmbed.setColor('#f00000')
-	goodbyeEmbed.setTitle( member.user.username + ' Said goodbye to this server. \nNow we got\ ' + member.guild.memberCount + ' members.');
-	goodbyeEmbed.setImage('https://cdn.discordapp.com/attachments/834116936366817302/948870203138277376/Logo_Volter.png')
+// 	goodbyeEmbed.setColor('#f00000')
+// 	goodbyeEmbed.setTitle( member.user.username + ' Said goodbye to this server. \nNow we got\ ' + member.guild.memberCount + ' members.');
+// 	goodbyeEmbed.setImage('https://cdn.discordapp.com/attachments/834116936366817302/948870203138277376/Logo_Volter.png')
   
-	member.guild.channels.cache.find(i => i.name === 'greetings').send({embeds: [goodbyeEmbed]})
+// 	member.guild.channels.cache.find(i => i.name === 'greetings').send({embeds: [goodbyeEmbed]})
 
-  });
+//   });

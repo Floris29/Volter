@@ -13,7 +13,7 @@ module.exports = {
         const days = Math.floor(totalSeconds / 86400);
         //Haal de seconden weg die zijn meegteld bij de dagen aan de hand van modulo
         totalSeconds %= 86400;
-        //Bereken het aantal uren
+        //Bereken het aantal urene
         const hours = Math.floor(totalSeconds / 3600);
         //Haal de seconden weg die zijn meegteld bij de uren aan de hand van modulo
         totalSeconds %= 3600;
