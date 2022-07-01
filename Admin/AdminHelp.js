@@ -38,38 +38,6 @@ module.exports = {
 		const name = args[0].toLowerCase();
 		const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
 
-    	//Als het geen command is, zeg dat de command niet geldig is
-		if (!command) {
-			return message.reply('that\'s not a valid command!');
-		}
-
-		commandEmbedDesc += `**Name:** ${command.name}\n`;
-
-		//Check of de command data heeft voor de alias, beschrijving of gebruik en voeg deze toe aan het bericht
-		if (command.aliases) commandEmbedDesc += `**Aliases:** ${command.aliases.join(', ')}\n`;
-		if (command.description) commandEmbedDesc += `**Description:** ${command.description}\n`;
-		if (command.usage) commandEmbedDesc += `**Usage:** ${prefix}${command.name} ${command.usage}\n`;
-		if (command.options) {
-
-			commandEmbedDesc += `\n*Options:*\n`;
-
-			command.options.forEach(item => {
-				commandEmbedDesc += `${item.name}: ${item.description}\n`;
-				commandEmbedDesc += `Input type: ${item.type}\nRequired: ${item.required}\n`;
-
-				if (item.choices) {
-					commandEmbedDesc += `**Choices:**\n`;
-
-					item.choices.forEach(option => {
-						commandEmbedDesc += `**${option.value}:** ${option.name}\n`;
-					});
-				}
-
-				commandEmbedDesc += `\n`;
-
-			});
-		}
-
 		const embed = new MessageEmbed()
 			.setTitle(`Here\'s a short explanation of: ${command.name}`)
 			.setDescription(commandEmbedDesc)
