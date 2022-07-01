@@ -52,7 +52,7 @@ for (const file of AdminFiles) {
 //En voor tickets
 const TicketFiles = fs.readdirSync('./Tickets').filter(file => file.endsWith('.js'));
 
-for (const file of AdminFiles) {
+for (const file of TicketFiles) {
 	const command = require(`./Tickets/${file}`);
 	client.commands.set(command.name, command);
 }
