@@ -53,6 +53,8 @@ module.exports = {
 			basicCommands.forEach(command => {
 				if (command.emotes == reactedEmote.emoji.name) {
 					message.reply(command.name + " command: " + command.description)
+				} else {
+					message.channel.send("You didn't react on the command!")
 				}
 			})
 
