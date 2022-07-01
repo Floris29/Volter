@@ -7,7 +7,7 @@ module.exports = {
   usage: "suggest <message>",
   description: "Send your poll",
   emotes: "✅",
-  commands: true,
+
   execute(message, args, client) {
 
     if(!args.length) {

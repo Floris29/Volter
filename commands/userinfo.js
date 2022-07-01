@@ -7,7 +7,7 @@ module.exports = {
     description: 'let you see the info about you',
     usage: '[command name]',
     emotes: '👁‍🗨',
-    commands: true,
+
     execute(message, args, client) {
 
         let user = message.mentions.users.first() || message.author;

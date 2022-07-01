@@ -8,7 +8,7 @@ module.exports = {
 	aliases: ['commands'],
 	usage: '[commandName]',
 	emotes: '❓',
-	commands: true,
+	
 	async execute(message, args, client) {
 		const { commands } = message.client;
 

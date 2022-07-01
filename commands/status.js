@@ -7,7 +7,7 @@ module.exports = {
     description: "Displays the status of the client and database.",
     usage: '[command name]',
     emotes: '🟢',
-    commands: true,
+
     
     execute(message, args, client){
         

@@ -9,7 +9,7 @@ module.exports = {
 	aliases: ['info'],
     usage: '[command name]',
     emotes: '🤖',
-    commands: true,
+
 
     execute(message, args, client){
 
