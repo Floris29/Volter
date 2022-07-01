@@ -4,7 +4,7 @@ const { MessageEmbed, Collection, Permissions} = require('discord.js');
 module.exports = {
       name: 'ticket',
       description: 'Create a button to create tickets.',
-      admin: true,
+      ticket: true,
       execute(message, args, client){
         
         const embed = new MessageEmbed()

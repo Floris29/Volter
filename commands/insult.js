@@ -5,6 +5,7 @@ module.exports = {
 	description: 'Will give a random insult',
     usage: '[command name]',
     emotes: '🔞',
+    commands: true,
 	execute(message) {
         try {
 

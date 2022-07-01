@@ -7,6 +7,7 @@ module.exports = {
 	description: 'List all of my commands or info about a specific command.',
 	aliases: ['commands'],
 	usage: '[commandName]',
+	commands: true,
 	emotes: '❓',
 	async execute(message, args, client) {
 		const { commands } = message.client;
@@ -53,10 +54,8 @@ module.exports = {
 			basicCommands.forEach(command => {
 				if (command.emotes == reactedEmote.emoji.name) {
 					message.reply(command.name + " command: " + command.description)
-				} else {
-					message.react("You didn't react on the command!")
 				}
-			})
+					})
 
 		});
 
