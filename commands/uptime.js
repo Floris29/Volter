@@ -5,7 +5,6 @@ module.exports = {
 	description: 'The time the bot has stayed alive without crashing',
         usage: '[command name]',
         emotes: '🔝',
-
 	execute(message, args, client) {
 
         //Bereken het totaal aantal seconden

@@ -10,7 +10,6 @@ module.exports = {
     usage: '[command name]',
     emotes: '🤖',
 
-
     execute(message, args, client){
 
         const embed = new MessageEmbed()
