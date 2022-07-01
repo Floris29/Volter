@@ -3,16 +3,16 @@ const { prefix } = require('../config.json');
 const { MessageEmbed, Collection, Permissions } = require('discord.js');
 
 module.exports = {
-	name: 'Tickethelp',
+	name: 'tickethelp',
 	description: 'List of all the ticket commands. including all the other commands',
-	aliases: ['thhelp'],
+	aliases: ['thelp'],
 	usage: '[command name]',
 	tickets: true,
 	execute(message, args) {
 		var commandEmbedDesc = '';
 		const { commands } = message.client;
 
-		if (!message.member.permissions.has(Permissions.FLAGS.MANAGE_CHANNELSS)) return message.channel.send("You don't have the permissions to execute this command.")
+		if (!message.member.permissions.has(Permissions.FLAGS.MANAGE_CHANNELS)) return message.channel.send("You don't have the permissions to execute this command.")
 
 		if (!args.length) {
 

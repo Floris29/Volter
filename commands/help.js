@@ -54,7 +54,7 @@ module.exports = {
 				if (command.emotes == reactedEmote.emoji.name) {
 					message.reply(command.name + " command: " + command.description)
 				} else {
-					message.channel.send("You didn't react on the command!")
+					message.react("You didn't react on the command!")
 				}
 			})
 
