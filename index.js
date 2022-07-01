@@ -49,6 +49,13 @@ for (const file of AdminFiles) {
 	client.commands.set(command.name, command);
 }
 
+const Ticketfiles = fs.readdirSync('./Ticket').filter(file => file.endsWith('.js'));
+
+for (const file of Ticketfiles) {
+	const command = require(`./Tickets/${file}`);
+	client.commands.set(command.name, command);
+}
+
 client.on('messageCreate', message => {
 
   	//Check of het bericht een prefix heeft en dat het het bericht niet van een bot af komt. Is dit zo, skip dan de rest van de code
