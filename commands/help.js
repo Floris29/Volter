@@ -7,8 +7,8 @@ module.exports = {
 	description: 'List all of my commands or info about a specific command.',
 	aliases: ['commands'],
 	usage: '[commandName]',
-	commands: true,
 	emotes: '❓',
+	commands: true,
 	async execute(message, args, client) {
 		const { commands } = message.client;
 

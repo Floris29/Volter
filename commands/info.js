@@ -8,8 +8,8 @@ module.exports = {
 	description: 'Gives you information about the bot and about the commands.',
 	aliases: ['info'],
     usage: '[command name]',
-    commands: true,
     emotes: '🤖',
+    commands: true,
 
     execute(message, args, client){
 
