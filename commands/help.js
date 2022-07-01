@@ -39,7 +39,7 @@ module.exports = {
 			return commandEmotes.includes(reaction.emoji.name) && `${user.id}`;
 		};
 		
-		const reactions = await message.awaitReactions({ filter, time: 1000 })
+		const reactions = await message.awaitReactions({ filter, time: 15000 })
 		.then(collected => {
 
 			var reactedEmote = "❓";
