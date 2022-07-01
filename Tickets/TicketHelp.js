@@ -7,7 +7,7 @@ module.exports = {
 	description: 'List of all the ticket commands. including all the other commands',
 	aliases: ['thelp'],
 	usage: '[command name]',
-	tickets: true,
+	admin: true,
 	execute(message, args) {
 		var commandEmbedDesc = '';
 		const { commands } = message.client;
