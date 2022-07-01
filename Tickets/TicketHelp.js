@@ -9,7 +9,7 @@ module.exports = {
 	usage: '[command name]',
 	ticket: true,
 	execute(message, args) {
-		var command = '';
+		var commandEmbedDesc = '';
 		const { Tickets } = message.client;
 
 		if (!message.member.permissions.has(Permissions.FLAGS.MANAGE_MESSAGES)) return message.channel.send("You don't have the permissions to execute this command.")
