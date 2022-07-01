@@ -39,7 +39,7 @@ module.exports = {
 			return commandEmotes.includes(reaction.emoji.name) && `${user.id}`;
 		};
 		
-		const reactions = await message.awaitReactions({ filter, time: 15000 })
+		const reactions = await message.awaitReactions({ filter, time: 1000 })
 		.then(collected => {
 
 			var reactedEmote = "❓";
@@ -54,7 +54,7 @@ module.exports = {
 				if (command.emotes == reactedEmote.emoji.name) {
 					message.reply(command.name + " command: " + command.description)
 				} else {
-					message.channel.send("You didn't react on the command!")
+					channel.send("You didn't react on the command!")
 				}
 			})
 
