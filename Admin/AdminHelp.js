@@ -7,16 +7,13 @@ module.exports = {
 	name: 'adminhelp',
   //Geef de beschrijving van de command
 	description: 'List all of all the commands or info about a specific command. This includes admin commands.',
-  //Geef de verschillende aliassen dat de command heeft
 	aliases: ['ahelp'],
-  //Laat zien hoe het command gebruikt moet worden
 	usage: '[command name]',
 	admin: true,
 	execute(message, args, client) {
 		var commandEmbedDesc = '';
 		const { commands } = message.client;
 
-		//TODO: Welke perm moet dit hebben?
 		if (!message.member.permissions.has(Permissions.FLAGS.MANAGE_MESSAGES)) return message.channel.send("You don't have the permissions to execute this command.")
 
     	//Als er geen arguments zijn meegegeven, geef dan een complete lijst van alle commands. Skip daarna de rest van de code

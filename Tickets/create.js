@@ -5,7 +5,6 @@ const {
 module.exports = {
     name: 'create',
     description: 'create your own ticket.',
-    admin: true,
     async execute(message, client, args) {
         const channelName = `ticket-${message.author.username}`
         const existing = message.guild.channels.cache.find(channel => channel.name === channelName.toLowerCase());
