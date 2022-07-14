@@ -4,7 +4,7 @@ const fs = require('fs');
 const client = new Client({ intents: 32767, partials: ["MESSAGE", "CHANNEL", "REACTION"] });
 
 //Haal variabelen uit config.json
-const { prefix } = require('./config.json');
+const { prefix, presenceName, presenceType, presenceStatus } = require('./config.json');
 
 //Login bij discord met de bot
 client.login(process.env.DISCORD_BOT_TOKEN);
