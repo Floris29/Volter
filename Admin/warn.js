@@ -1,3 +1,5 @@
+//TODO Make this one work, create a unmute command, Fix that if u mute a user: that the perms are getting removed.
+
 const fs = require("fs");
 const discord = require("discord.js");
 const Discord = require("discord.js");

@@ -1,3 +1,4 @@
+//TODO clean up the code
 const { Client, Intents } = require('discord.js');
 const discord = require('discord.js');
 const { MessageEmbed, Collection, Permissions } = require ('discord.js');

@@ -1,3 +1,4 @@
+//TODO maybe make an embed with a image (can be a profile picture of the user)
 module.exports = {
 	name: 'ping',
 	description: 'Gives the ping between the bot and you',

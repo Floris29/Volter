@@ -1,3 +1,4 @@
+//TODO clean up the code
 const { Client, Collection, Intents, MessageAttachment, Message, MessageEmbed } = require('discord.js');
 const fs = require('fs');
 

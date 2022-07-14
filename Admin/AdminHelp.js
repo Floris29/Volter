@@ -1,4 +1,3 @@
-//Import de nodige variabelen van config.json
 const { prefix } = require('../config.json');
 const { MessageEmbed, Collection, Permissions } = require('discord.js');
 

@@ -1,3 +1,4 @@
+//TODO make it more deatailed with more information about the user
 const discord = require('discord.js');
 const moment = require('moment');
 const { MessageEmbed } = require('discord.js');

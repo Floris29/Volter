@@ -1,3 +1,4 @@
+//TODO clean up the code
 const { Client, Intents } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 const Discord = require('discord.js');

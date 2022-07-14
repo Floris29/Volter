@@ -1,3 +1,4 @@
+//TODO add an image to the embed
 const Discord = require('discord.js');
 
 module.exports = {
@@ -24,7 +25,7 @@ module.exports = {
 
         //Maak een embed met de berekende data
         const embed = new Discord.MessageEmbed()
-           .setTitle('Uptime')
+           .setTitle('The bot is already up for:')
            .addField('Days', `${days}`)
            .addField('Hours', `${hours}`)
            .addField('Minutes', `${minutes}`)

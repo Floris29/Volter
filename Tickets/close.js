@@ -1,6 +1,5 @@
+//TODO Make it more that you only can remove a channel with a something in the name.
 const { MessageEmbed, Collection, Permissions } = require ('discord.js');
-
-//Ja, dit is heel basic maar dat maakt niet uit, voor nu doet hij het en later kijk ik er nog wel naar
 
 module.exports = {
     name: 'close',
