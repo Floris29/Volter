@@ -1,6 +1,6 @@
 {
     "prefix": ".",
-    "presenceName": "EVERYONE",
+    "presenceName": "EVERYONE (and .help)",
     "presenceType": "WATCHING",
     "presenceStatus": "ONLINE"
 }
