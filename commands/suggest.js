@@ -4,9 +4,9 @@ const discord = require('discord.js')
 
 module.exports = {
   name: "suggest",
-  usage: "suggest <message>",
   description: "Send your poll",
   emotes: "✅",
+  function: 'Fun',
   execute(message, args, client) {
 
     if(!args.length) {

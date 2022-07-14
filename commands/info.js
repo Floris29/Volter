@@ -7,7 +7,7 @@ module.exports = {
     name: 'info',
 	description: 'Gives you information about the bot and about the commands.',
 	aliases: ['info'],
-    usage: '[command name]',
+    function: 'Fun',
     emotes: '🤖',
 
     execute(message, args, client){

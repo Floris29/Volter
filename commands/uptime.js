@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
 	name: 'uptime',
 	description: 'The time the bot has stayed alive without crashing',
-        usage: '[command name]',
+        function: 'Fun',
         emotes: '🔝',
 	execute(message, args, client) {
 

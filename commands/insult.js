@@ -3,7 +3,7 @@ const axios = require('axios');
 module.exports = {
 	name: 'insult',
 	description: 'Will give a random insult',
-    usage: '[command name]',
+    function: 'Fun',
     emotes: '🔞',
 	execute(message) {
         try {

@@ -5,7 +5,7 @@ const os = require('os');
 module.exports = {
     name: "status",
     description: "Displays the status of the client and database.",
-    usage: '[command name]',
+    function: 'Fun',
     emotes: '🟢',
     
     execute(message, args, client){

@@ -5,7 +5,7 @@ const { MessageEmbed } = require('discord.js');
 module.exports = {
     name: 'userinfo',
     description: 'let you see the info about you',
-    usage: '[command name]',
+    function: 'Fun',
     emotes: '👁‍🗨',
     execute(message, args, client) {
 

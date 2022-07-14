@@ -1,7 +1,7 @@
 module.exports = {
 	name: 'ping',
 	description: 'Gives the ping between the bot and you',
-  usage: '[command name]',
+  function: 'Fun',
   emotes: '📶',
 	execute(message) {
     //Stuur een bericht in het kanaal
