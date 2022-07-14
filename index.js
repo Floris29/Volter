@@ -12,8 +12,6 @@ client.login(process.env.DISCORD_BOT_TOKEN);
 //Zodra de bot is opgestart, voer dit uit
 client.on("ready", () => {
 	console.log(`Logged in as ${client.user.tag}!`);
-	client.user.setPresence({ status: 'Online' })
-
 	client.user.setPresence({
    activities: [{
      name: presenceName,
