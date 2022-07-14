@@ -6,7 +6,7 @@ module.exports = {
   //Geef de naam van de command
 	name: 'adminhelp',
   //Geef de beschrijving van de command
-	description: 'List all of all the commands or info about a specific command. This includes admin commands.',
+	description: 'list of admin commands.',
 	aliases: ['ahelp'],
 	usage: '[command name]',
 	admin: true,

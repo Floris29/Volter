@@ -6,7 +6,7 @@ module.exports = {
   //Geef de naam van de command
 	name: 'tickethelp',
   //Geef de beschrijving van de command
-	description: 'List all of all the commands or info about a specific command. This includes ticket commands.',
+	description: 'list of all my ticket commands.',
 	aliases: ['thelp'],
 	usage: '[command name]',
 	admin: true,
@@ -23,7 +23,7 @@ module.exports = {
 
 			//EMBED
 			const embed = new MessageEmbed()
-			.setTitle('Here\'s a list of all my ticket  commands:')
+			.setTitle('Here\'s a list of all my ticket commands:')
 			.setDescription(helpDesc)
 			.setColor('RANDOM')
 			.setFooter({text: '\nYou can send ${prefix}help [command name] to get info on a specific command!'});
