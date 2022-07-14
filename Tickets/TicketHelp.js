@@ -21,8 +21,7 @@ module.exports = {
     	//Als er geen arguments zijn meegegeven, geef dan een complete lijst van alle commands. Skip daarna de rest van de code
 		if (!args.length) {
 
-			const helpDesc = commands.map(command => '``' + command.name + command.function + '```').join('\n');
-
+			const helpDesc = basicCommands.map(command => '```' + command.name + ' : ' + command.function + '```').join('\n');
 			//EMBED
 			const embed = new MessageEmbed()
 			.setTitle('Here\'s a list of all my ticket commands:')
