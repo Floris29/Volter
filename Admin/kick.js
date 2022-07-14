@@ -7,7 +7,7 @@ module.exports = {
 	name: 'kick',
 	description: 'Kicks a specific member',
     admin: true,
-	function: Admin,
+	function: 'Admin',
 	options: [{
 			name: "Target",
 			description: "Provide A User To Kick.",

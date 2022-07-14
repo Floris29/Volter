@@ -8,7 +8,7 @@ module.exports = {
     name: 'ban',
     description: 'bans a specefic member.',
     admin: true,
-	function: Admin,
+	function: 'Admin',
     options: [{
 
         name: "Target",

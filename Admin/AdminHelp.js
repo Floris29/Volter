@@ -10,7 +10,7 @@ module.exports = {
 	aliases: ['ahelp'],
 	usage: '[command name]',
 	admin: true,
-	function: Admin,
+	function: 'Admin',
 	execute(message, args, client) {
 		var commandEmbedDesc = '';
 		const { commands } = message.client;

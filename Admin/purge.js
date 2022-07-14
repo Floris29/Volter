@@ -7,7 +7,7 @@ module.exports = {
     name: 'purge',
     description: 'Deletes a amount of messages in the chat.',
     admin: true,
-	function: Admin,
+	function: 'Admin',
     async execute(message, args){
         if (!message.member.permissions.has(Permissions.FLAGS.MANAGE_MESSAGES)) return message.channel.send("You don't have the permissions to execute this command.");
         if(!args[0]) return message.reply("Please enter the amount of messages you wish to delete.");
