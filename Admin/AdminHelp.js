@@ -10,6 +10,7 @@ module.exports = {
 	aliases: ['ahelp'],
 	usage: '[command name]',
 	admin: true,
+	function: Admin,
 	execute(message, args, client) {
 		var commandEmbedDesc = '';
 		const { commands } = message.client;
@@ -19,7 +20,7 @@ module.exports = {
     	//Als er geen arguments zijn meegegeven, geef dan een complete lijst van alle commands. Skip daarna de rest van de code
 		if (!args.length) {
 
-			const helpDesc = commands.map(command => '**' + command.name + '**').join('\n');
+			const helpDesc = commands.map(command => '``' + command.name + command.function + '```').join('\n');
 
 			//EMBED
 			const embed = new MessageEmbed()

@@ -4,6 +4,7 @@ module.exports = {
     name: 'say',
 	description: 'sends a message in a embed',
     admin: true,
+	function: Admin,
     execute(message, args){
 
         if(!args.length) return;

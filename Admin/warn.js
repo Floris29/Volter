@@ -6,6 +6,7 @@ module.exports = {
     name: 'warn',
 	description: 'Warns a member',
     admin: true,
+	function: Admin,
     execute(message, args){
 
     const errorEmbed = new Discord.MessageEmbed()

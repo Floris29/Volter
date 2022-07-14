@@ -5,6 +5,7 @@ module.exports = {
       name: 'ticket',
       description: 'Create a button to create tickets.',
       admin: true,
+      function: Tickets,
       execute(message, args, client){
         
         const embed = new MessageEmbed()

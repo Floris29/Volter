@@ -27,7 +27,7 @@ module.exports = {
 		.setTitle('Here\'s a list of all my commands:')
 		.setDescription(helpDesc)
 		.setColor('RANDOM')
-		.setFooter({text: '\nClick on one of the emoties to see the whole command usage!'});
+		.setFooter({text: '\nClick on one of the emojis to see the whole command usage!'});
 		
 		message.reply({ embeds: [embed], ephemeral: true });
 
