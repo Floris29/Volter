@@ -7,6 +7,7 @@ module.exports = {
 	name: 'tickethelp',
   //Geef de beschrijving van de command
 	description: 'list of all my ticket commands.',
+	admin: true,
 	aliases: ['thelp'],
 	usage: '[command name]',
 	admin: true,
