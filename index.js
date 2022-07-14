@@ -13,42 +13,35 @@ client.login(process.env.DISCORD_BOT_TOKEN);
 client.on("ready", () => {
 	console.log(`Logged in as ${client.user.tag}!`);
 	client.user.setPresence({ status: 'Online' })
-	const activities = [
-		`in ${client.guilds.cache.size} Servers`
-	];
-	let i = 0;
-	setInterval(() => client.user.setActivity(` ${activities[i++ % activities.length]}`, { type: 'PLAYING' }), 10000); 
+
+	client.user.setPresence({
+   activities: [{
+     name: presenceName,
+     type: presenceType,
+    }],
+    status: presenceStatus,
+  });
 	});
 
 
-  //Set presence naar de gewenste waarden in config.json
- // client.user.setPresence({
-   // activities: [{
-    //  name: presenceName,
-     // type: presenceType,
-    //}],
-    //status: presenceStatus,
-  //});
-
-
-//Zorg ervoor dat andere bestanden gebruikt kunnen worden voor commands
+//Commands
 client.commands = new Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
-//Voeg alle gevonden commands in de folder commands toe aan client
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
 	client.commands.set(command.name, command);
 }
 
-//Zorg ook voor admin commands
+//Admin
+client.commands = new Collection();
 const AdminFiles = fs.readdirSync('./Admin').filter(file => file.endsWith('.js'));
 
 for (const file of AdminFiles) {
 	const command = require(`./Admin/${file}`);
 	client.commands.set(command.name, command);
 }
-
+//Tickets
 client.commands = new Collection();
 const Ticketfiles = fs.readdirSync('./Tickets').filter(file => file.endsWith('.js'));
 
