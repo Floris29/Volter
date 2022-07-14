@@ -32,7 +32,6 @@ for (const file of commandFiles) {
 }
 
 //Admin
-client.commands = new Collection();
 const AdminFiles = fs.readdirSync('./Admin').filter(file => file.endsWith('.js'));
 
 for (const file of AdminFiles) {
@@ -40,7 +39,6 @@ for (const file of AdminFiles) {
 	client.commands.set(command.name, command);
 }
 //Tickets
-client.commands = new Collection();
 const Ticketfiles = fs.readdirSync('./Tickets').filter(file => file.endsWith('.js'));
 
 for (const file of Ticketfiles) {
