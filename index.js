@@ -49,6 +49,7 @@ for (const file of AdminFiles) {
 	client.commands.set(command.name, command);
 }
 
+client.commands = new Collection();
 const Ticketfiles = fs.readdirSync('./Tickets').filter(file => file.endsWith('.js'));
 
 for (const file of Ticketfiles) {
