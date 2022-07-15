@@ -1,4 +1,3 @@
-//TODO clean up the code
 const { Client, Intents } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 const Discord = require('discord.js');
@@ -22,11 +21,11 @@ module.exports = {
         description: "add the reason why you wanna ban someone.",
         type: "STRING",
         required: true
-    },
+    }
 ],
 async execute(message, args, client) {
     const target = message.mentions.members.first();
-    const reason = args.slice(1, args.length - 1).join(" ");
+    const reason = args.slice(1, args.length - 0).join(" ");
 
 		console.log("Target: " + reason);
 
