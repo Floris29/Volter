@@ -62,14 +62,6 @@ client.on('messageCreate', message => {
 
 	if (!command) return;
 
-	//Uncomment if you want to log messages
-	//  var logMessage = message.author.toString() + ' used ' + commandName + ' in ' + message.channel.toString();
-	//  if (args.length > 0) {
-	//    logMessage += ' with the arguments:' + args
-	//  }
-	//  let logschannel = message.guild.channels.cache.find(channel => channel.name === 'bot-logs').send(logMessage) 
-	//  console.log (`logged command by ${message.member.user.toString()} in ${message.guild.name}.`)
-
   	//Probeer het command uit te voeren, en geef het bericht met de arguments mee
 	try {
 		command.execute(message, args, client);
@@ -78,28 +70,3 @@ client.on('messageCreate', message => {
 		message.channel.send('There was an error trying to execute that command!');
 	}
 });
-
-// client.on('guildMemberAdd', member => {
-  
-// 	const welcomeEmbed = new MessageEmbed()
-  
-// 	welcomeEmbed.setColor('#5cf000')
-// 	welcomeEmbed.setTitle(member.user.username + ' is now member of this beautiful server! \nWe\'ve got now ' + member.guild.memberCount + ' members!')
-// 	welcomeEmbed.setImage('https://cdn.discordapp.com/attachments/834116936366817302/948870203138277376/Logo_Volter.png')
-  
-// 	member.guild.channels.cache.find(i => i.name === 'welcome').send({embeds: [welcomeEmbed]})
-  
-//   });
-  
-//   client.on('guildMemberRemove', member => {
-  
-  
-// 	const goodbyeEmbed = new MessageEmbed()
-  
-// 	goodbyeEmbed.setColor('#f00000')
-// 	goodbyeEmbed.setTitle( member.user.username + ' Said goodbye to this server. \nNow we got\ ' + member.guild.memberCount + ' members.');
-// 	goodbyeEmbed.setImage('https://cdn.discordapp.com/attachments/834116936366817302/948870203138277376/Logo_Volter.png')
-  
-// 	member.guild.channels.cache.find(i => i.name === 'greetings').send({embeds: [goodbyeEmbed]})
-
-//   });

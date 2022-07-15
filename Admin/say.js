@@ -11,9 +11,9 @@ module.exports = {
 
         let description = args.join(" ");
         const embed = new Discord.MessageEmbed()
-        .setDescription(description) // setTitle and stuff according to your preference
+        .setDescription(description)
         .setTimestamp()
-        message.delete(); // deleting the user message since it should be anonymous
+        message.delete();
         message.channel.send({embeds: [embed]});
 
         
