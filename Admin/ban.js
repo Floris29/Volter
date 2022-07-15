@@ -43,7 +43,7 @@ async execute(message, args, client) {
 			.then((m) => {
                 setTimeout(() => {
                     m.delete();
-                }, 14000);
+                }, 10000);
             });
 
 		if (target.permissions.has(Permissions.FLAGS.BAN_MEMBERS)) {
@@ -51,7 +51,7 @@ async execute(message, args, client) {
 			.then((m) => {
                 setTimeout(() => {
                     m.delete();
-                }, 14000);
+                }, 10000);
             });
 		}
 
