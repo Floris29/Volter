@@ -39,21 +39,20 @@ async execute(message, args, client) {
 			return message.reply({embeds: [embed]}).catch((err) => {console.log(err)});
 
 		if (target.id === message.member.id)
-			return message.reply({
-				embeds: [new MessageEmbed()
-				.setTitle("There seems to be a error to execute this command")
-				.setColor("RED")
-				.setDescription("Why would you ban yourself?")
-				],
-				ephemeral: true
-			});
+			return message.reply("You can't ban yourself!")
+			.then((m) => {
+                setTimeout(() => {
+                    m.delete();
+                }, 14000);
+            });
 
 		if (target.permissions.has(Permissions.FLAGS.BAN_MEMBERS)) {
-			return message.reply({
-				embeds: [new MessageEmbed()
-				.setColor("RED")
-				.setDescription("You can't kick this person.")]
-			});
+			return message.reply("You can't ban this user!")
+			.then((m) => {
+                setTimeout(() => {
+                    m.delete();
+                }, 14000);
+            });
 		}
 
 		message.guild.bans.create(target, {
