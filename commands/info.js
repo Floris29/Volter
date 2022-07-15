@@ -7,7 +7,7 @@ const { MessageEmbed, Collection, Permissions } = require ('discord.js');
 
 module.exports = {
     name: 'info',
-	description: 'Gives you information about the bot and about the commands.',
+	description: 'Gives you information about the commands.',
 	aliases: ['info'],
     function: 'Fun',
     emotes: '🤖',

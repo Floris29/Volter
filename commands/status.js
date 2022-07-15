@@ -4,7 +4,7 @@ const os = require('os');
 
 module.exports = {
     name: "status",
-    description: "Displays the status of the client and database.",
+    description: "Gives you information about the status of the bot.",
     function: 'Fun',
     emotes: '🟢',
     
