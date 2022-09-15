@@ -24,6 +24,8 @@ module.exports = {
         .setThumbnail(user.avatarURL())
         .addField(`${user.tag}`, `${user}`, true)
         .addField("ID:", `${user.id}`, true)
+        .addField("Discrimintor", `${message.client.user.discriminator}`, true)
+        .addField("Presence", `${message.client.user.precence}`, true)
         .addField("Roles:", message.member.roles.cache.map(roles => `${roles}`).join(', '), true)
         .addField("Joined The Server On:", `${moment.utc(mentionedMember.joinedAt).format("dddd, MMMM Do YYYY")}`, true)
         .addField("Account Created On:", `${moment.utc(user.createdAt).format("dddd, MMMM Do YYYY")}`, true) 
