@@ -7,7 +7,7 @@ module.exports = {
   function: 'Fun',
   emotes: '🥇',
 
-  execute(message) {
+  execute(message, args, client){
   message.channel.send(
     { 
       embeds: [
