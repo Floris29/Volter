@@ -2,8 +2,8 @@ const discord = require('discord.js');
 const { MessageEmbed } = require('discord.js');
 
 module.exports = {
-	name: 'ping',
-	description: 'Gives the ping between the bot and you',
+	name: 'server',
+	description: 'Gives you all the servers were the bot is in',
   function: 'Fun',
   emotes: '🥇',
 
