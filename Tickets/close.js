@@ -10,7 +10,12 @@ module.exports = {
       if(!message.member.permissions.has(Permissions.FLAGS.MANAGE_CHANNELS)) { 
         return message.channel.send("Only a moderator can close a ticket!")
       } else {
-        message.channel.delete()
+        if(message.channel.name.includes('ticket-')) {
+          message.channel.delete()
+        }
+        else {
+          message.channel.send("You cannot delete this channel.")
+        }
       }
 }
 }
