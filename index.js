@@ -47,16 +47,6 @@ for (const file of Ticketfiles) {
 	client.commands.set(command.name, command);
 }
 
-
-
-
-var logMessage = message.author.toString() + ' used ' + commandName + ' in ' + message.channel.toString();
-if (args.length > 0) {
-logMessage += ' with the arguments:' + args
-}
-let logschannel = message.guild.channels.cache.find(channel => channel.id === '1027589173718298675').send() 
-console.log (`logged command by ${message.member.user.toString()} in ${message.guild.name}.`)
-
 client.on('messageCreate', message => {
 
   	//Check of het bericht een prefix heeft en dat het het bericht niet van een bot af komt. Is dit zo, skip dan de rest van de code
